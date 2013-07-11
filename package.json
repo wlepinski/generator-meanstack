@@ -1,7 +1,7 @@
 {
   "name": "generator-meanstack",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.0.1",
+  "description": "The MEAN stack generator for Yeoman.",
   "keywords": [
     "yeoman-generator"
   ],
