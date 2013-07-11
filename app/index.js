@@ -83,4 +83,6 @@ MeanstackGenerator.prototype.projectfiles = function projectfiles() {
 
     // Express
     this.copy('_app.js', 'app.js');
+    this.copy('_app_grunt.js', 'app_grunt.js');
+    this.copy('_server.js', 'server.js');
 };

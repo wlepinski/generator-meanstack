@@ -1,6 +1,7 @@
 // Generated on 2013-07-11 using generator-angular 0.3.0
 'use strict';
 var LIVERELOAD_PORT = 35729;
+var path = require('path');
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
@@ -26,6 +27,8 @@ module.exports = function (grunt) {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
   } catch (e) {}
 
+  grunt.loadNpmTasks('grunt-express');
+
   grunt.initConfig({
     yeoman: yeomanConfig,
     watch: {
@@ -49,9 +52,17 @@ module.exports = function (grunt) {
         ]
       }
     },
+    express: {
+      server: {
+        options: {
+          debug: true,
+          server: path.resolve('app.js')
+        }
+      }
+    },
     connect: {
       options: {
-        port: 9000,
+        port: 3000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost'
       },
@@ -285,7 +296,8 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'connect:livereload',
+      // 'connect:livereload',
+      'express',
       'open',
       'watch'
     ]);
