@@ -48,19 +48,39 @@ MeanstackGenerator.prototype.app = function app() {
     this.mkdir('routes');
     this.mkdir('views');
 
-    this.directory('public/images');
-    this.directory('public/javascripts');
-    this.directory('public/stylesheets');
-    this.directory('config/environments');
+    this.directory('public');
     this.directory('routes');
     this.directory('views');
+    this.directory('config');
+
+    // Frontend
+    this.mkdir('app');
+    this.mkdir('app/scripts');
+    this.mkdir('app/styles');
+    this.mkdir('app/views');
+    this.directory('app');
+    this.mkdir('test');
+    this.mkdir('test/spec');
+    this.mkdir('test/spec/controllers');
+    this.directory('test');
 };
 
 MeanstackGenerator.prototype.projectfiles = function projectfiles() {
-    this.copy('package.json', 'package.json');
-    this.copy('bower.json', 'bower.json');
-    this.copy('app.js', 'app.js');
-    this.copy('.bowerrc', '.bowerrc');
-    this.copy('.editorconfig', '.editorconfig');
-    this.copy('.jshintrc', '.jshintrc');
+    // Dotfiles
+    this.copy('_bowerrc', '.bowerrc');
+    this.copy('_editorconfig', '.editorconfig');
+    this.copy('_jshintrc', '.jshintrc');
+    this.copy('_gitattributes', '.gitattributes');
+
+    // Package
+    this.copy('_package.json', 'package.json');
+
+    // Front
+    this.copy('_bower.json', 'bower.json');
+    this.copy('_Gruntfile.js', 'Gruntfile.js');
+    this.copy('_karma-e2e.conf.js', 'karma-e2e.conf.js');
+    this.copy('_karma.conf.js', 'karma.conf.js');
+
+    // Express
+    this.copy('_app.js', 'app.js');
 };

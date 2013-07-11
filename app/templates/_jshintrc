@@ -1,13 +1,13 @@
 {
     "node": true,
-    "es5": true,
+    "browser": true,
     "esnext": true,
     "bitwise": true,
     "camelcase": true,
     "curly": true,
     "eqeqeq": true,
     "immed": true,
-    "indent": 4,
+    "indent": 2,
     "latedef": true,
     "newcap": true,
     "noarg": true,
@@ -15,8 +15,10 @@
     "regexp": true,
     "undef": true,
     "unused": true,
-    "strict": false,
+    "strict": true,
     "trailing": true,
     "smarttabs": true,
-    "white": true
+    "globals": {
+        "angular": false
+    }
 }
