@@ -1,8 +1,11 @@
 var express = require('express'),
+    mongoose = require('mongoose'),
     path = require('path');
 
 module.exports = function (app) {
     app.configure('production', function () {
+        mongoose.connect(process.env.MONGODB_URL);
+
         app.set('port', process.env.PORT || 9000);
         app.set('views', path.join(app.directory, '/dist'));
         app.engine('html', require('ejs').renderFile);
