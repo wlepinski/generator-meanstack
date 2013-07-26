@@ -1,14 +1,12 @@
 var express = require('express'),
-    mongoose = require('mongoose'),
     path = require('path');
 
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
 
 module.exports = function (app) {
+    console.log(lrSnippet);
     app.configure('development', function () {
-        mongoose.connect('mongodb://localhost/<%= _.slugify(appname) %>');
-
         app.set('port', process.env.PORT || 9000);
         app.set('views', path.join(app.directory, '/app'));
         app.engine('html', require('ejs').renderFile);

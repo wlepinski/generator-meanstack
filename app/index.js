@@ -18,25 +18,25 @@ var MeanstackGenerator = module.exports = function MeanstackGenerator(args, opti
 
 util.inherits(MeanstackGenerator, yeoman.generators.Base);
 
-// MeanstackGenerator.prototype.askFor = function askFor() {
-//     var cb = this.async();
+MeanstackGenerator.prototype.askFor = function askFor() {
+    var cb = this.async();
 
-//     // have Yeoman greet the user.
-//     console.log(this.yeoman);
+    // have Yeoman greet the user.
+    console.log(this.yeoman);
 
-//     var prompts = [{
-//         type: 'confirm',
-//         name: 'someOption',
-//         message: 'Would you like to enable this option?',
-//         default: true
-//     }];
+    var prompts = [{
+        type: 'confirm',
+        name: 'someOption',
+        message: 'Would you like to enable this option?',
+        default: true
+    }];
 
-//     this.prompt(prompts, function (props) {
-//         this.someOption = props.someOption;
+    this.prompt(prompts, function (props) {
+        this.someOption = props.someOption;
 
-//         cb();
-//     }.bind(this));
-// };
+        cb();
+    }.bind(this));
+};
 
 MeanstackGenerator.prototype.app = function app() {
     this.mkdir('public');
