@@ -1,5 +1,6 @@
 # Generator-meanstack
 [![Build Status](https://secure.travis-ci.org/wlepinski/generator-meanstack.png?branch=master)](https://travis-ci.org/wlepinski/generator-meanstack)
+[![NPM version](https://badge.fury.io/js/generator-meanstack.png)](http://badge.fury.io/js/generator-meanstack)
 
 A generator for Yeoman.
 
