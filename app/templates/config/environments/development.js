@@ -1,12 +1,12 @@
 var express = require('express'),
     path = require('path');
 
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
-
 module.exports = function (app) {
-    console.log(lrSnippet);
     app.configure('development', function () {
+        app.use(function staticsPlaceholder(req, res, next) {
+            return next();
+        });
+
         app.set('port', process.env.PORT || 9000);
         app.set('views', path.join(app.directory, '/app'));
         app.engine('html', require('ejs').renderFile);
@@ -17,9 +17,12 @@ module.exports = function (app) {
         app.use(express.methodOverride());
         app.use(express.cookieParser('your secret here'));
         app.use(express.session());
-        app.use(lrSnippet);
+
+        app.use(function middlewarePlaceholder(req, res, next) {
+          return next();
+        });
+
         app.use(app.router);
-        app.use(express.static(path.join(app.directory, 'app')));
         app.use(express.errorHandler());
     });
 };

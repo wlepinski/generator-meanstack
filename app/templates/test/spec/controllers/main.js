@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('<%=.slugify(appname)%>App'));
+  beforeEach(module('<%= _.camelize(appname) %>App'));
 
   var MainCtrl,
     scope;

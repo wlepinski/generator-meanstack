@@ -36,6 +36,6 @@
         "connect-livereload": "~0.2.0",
         "grunt-google-cdn": "~0.2.0",
         "grunt-ngmin": "~0.0.2",
-        "grunt-express": "~0.3.2"
+        "grunt-express": "~1.0.0"
     }
 }
