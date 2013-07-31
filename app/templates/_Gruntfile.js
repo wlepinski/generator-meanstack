@@ -49,30 +49,30 @@ module.exports = function (grunt) {
       }
     },
     express: {
+      options: {
+        port: 3000,
+        hostname: '*'
+      },
+      livereload: {
         options: {
-            port: 3000,
-            hostname: '*'
-        },
-        livereload: {
-            options: {
-                livereload: true,
-                serverreload: true,
-                server: path.resolve('app.js'),
-                bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
-            }
-        },
-        test: {
-            options: {
-                server: path.resolve('app.js'),
-                bases: [path.resolve('./.tmp'), path.resolve(__dirname, 'test')]
-            }
-        },
-        dist: {
-            options: {
-                server: path.resolve('app.js'),
-                bases: path.resolve(__dirname, yeomanConfig.dist)
-            }
+          livereload: true,
+          serverreload: true,
+          server: path.resolve('app.js'),
+          bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
         }
+      },
+      test: {
+        options: {
+          server: path.resolve('app.js'),
+          bases: [path.resolve('./.tmp'), path.resolve(__dirname, 'test')]
+        }
+      },
+      dist: {
+        options: {
+          server: path.resolve('app.js'),
+          bases: path.resolve(__dirname, yeomanConfig.dist)
+        }
+      }
     },
     open: {
       server: {
