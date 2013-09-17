@@ -24,7 +24,18 @@ MeanstackGenerator.prototype.askFor = function askFor() {
     // have Yeoman greet the user.
     console.log(this.yeoman);
 
-    cb();
+    var prompts = [{
+        type: 'confirm',
+        name: 'herokuIntegration',
+        message: 'Are you planning to deploy this project on Heroku?',
+        default: false
+    }];
+
+    this.prompt(prompts, function (props) {
+        this.herokuIntegration = props.herokuIntegration;
+
+        cb();
+    }.bind(this));
 };
 
 MeanstackGenerator.prototype.app = function app() {
@@ -74,4 +85,9 @@ MeanstackGenerator.prototype.projectfiles = function projectfiles() {
     this.copy('_app.js', 'app.js');
     this.copy('_app_grunt.js', 'app_grunt.js');
     this.copy('_server.js', 'server.js');
+
+    if (this.herokuIntegration) {
+        this.copy('_Procfile', 'Procfile');
+        this.copy('_env', '.env');
+    }
 };

@@ -9,9 +9,8 @@
         "node": ">=0.8.0"
     },
     "dependencies": {
-        "express": "3.2.6",
-        "ejs": "*",
-        "mongoose": "~3.6.14"
+        "express": "3.4.0",
+        "ejs": "*"
     },
     "devDependencies": {
         "grunt": "~0.4.1",
