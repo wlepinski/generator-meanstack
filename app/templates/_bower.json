@@ -4,11 +4,14 @@
     "dependencies": {
         "jquery": "~2.0.3",
         "angular": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        "json3": "~3.2.4",
-        "es5-shim": "~2.0.8",
         "angular-resource": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
         "angular-cookies": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        "angular-sanitize": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>
+        "angular-sanitize": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
+        <% if (!angularStable) { %>
+        "angular-route": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
+        <% } %>
+        "json3": "~3.2.4",
+        "es5-shim": "~2.0.8"
     },
     "devDependencies": {
         "angular-mocks": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
