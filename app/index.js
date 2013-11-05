@@ -24,15 +24,24 @@ MeanstackGenerator.prototype.askFor = function askFor() {
     // have Yeoman greet the user.
     console.log(this.yeoman);
 
-    var prompts = [{
-        type: 'confirm',
-        name: 'herokuIntegration',
-        message: 'Are you planning to deploy this project on Heroku?',
-        default: false
-    }];
+    var prompts = [
+        {
+            type: 'confirm',
+            name: 'herokuIntegration',
+            message: 'Are you planning to deploy this project on Heroku?',
+            default: false
+        },
+        {
+            type: 'confirm',
+            name: 'angularStable',
+            message: 'Prefer stable version of AngularJS?',
+            default: true
+        }
+    ];
 
     this.prompt(prompts, function (props) {
         this.herokuIntegration = props.herokuIntegration;
+        this.angularStable = props.angularStable;
 
         cb();
     }.bind(this));
