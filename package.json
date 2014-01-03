@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "The MEAN stack generator for Yeoman.",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "mongodb",
+    "angularjs",
+    "expressjs"
   ],
   "homepage": "https://github.com/wlepinski/generator-meanstack",
   "bugs": "https://github.com/wlepinski/generator-meanstack/issues",
@@ -21,10 +24,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.13.4"
+    "yeoman-generator": "~0.15.0"
   },
   "devDependencies": {
-    "mocha": "~1.10.0"
+    "mocha": "~1.16.1"
   },
   "engines": {
     "node": ">=0.8.0"
