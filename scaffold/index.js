@@ -8,16 +8,9 @@ var ScaffoldGenerator = module.exports = function ScaffoldGenerator(args, option
     console.log('You called the scaffold subgenerator with the argument ' + this.name + '.');
 
     this.hookFor('meanstack:model');
-    this.hookFor('meanstack:express-route');
+    this.hookFor('meanstack:scaffold-express-route');
+    this.hookFor('meanstack:scaffold-angular-controller');
+    this.hookFor('meanstack:scaffold-angular-service');
 };
 
 util.inherits(ScaffoldGenerator, yeoman.generators.NamedBase);
-
-// ScaffoldGenerator.prototype.generateModel = function generateModel() {
-//     this.invoke("meanstack:model", {
-//         options: {
-//             entity: this.entityName,
-//             entityFields: this.entityFields
-//         }
-//     });
-// };

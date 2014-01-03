@@ -5,7 +5,7 @@ var yeoman = require('yeoman-generator');
 var insertify = require('insertify');
 var _s = require('underscore.string');
 
-var ExpressRouteGenerator = module.exports = function ExpressRouteGenerator(args, options, config) {
+var ScaffoldExpressRouteGenerator = module.exports = function ScaffoldExpressRouteGenerator(args, options, config) {
   yeoman.generators.NamedBase.apply(this, arguments);
 
   this.className = _s.classify(this.name);
@@ -15,16 +15,16 @@ var ExpressRouteGenerator = module.exports = function ExpressRouteGenerator(args
   console.log('You called the express_route subgenerator with the argument ' + this.name + '.');
 };
 
-util.inherits(ExpressRouteGenerator, yeoman.generators.NamedBase);
+util.inherits(ScaffoldExpressRouteGenerator, yeoman.generators.NamedBase);
 
-ExpressRouteGenerator.prototype.createRoutesFolder = function createRoutesFolder() {
+ScaffoldExpressRouteGenerator.prototype.createRoutesFolder = function createRoutesFolder() {
     var routesDir = 'routes/' + this.name;
 
     this.mkdir(routesDir);
     this.template('index.js', routesDir + "/index.js");
 };
 
-ExpressRouteGenerator.prototype.rewriteRoutesFile = function rewriteRoutesFile() {
+ScaffoldExpressRouteGenerator.prototype.rewriteRoutesFile = function rewriteRoutesFile() {
     var fullPath = path.join('routes', 'index.js');
 
     insertify.rewriteFile({
