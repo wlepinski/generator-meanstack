@@ -25,7 +25,9 @@
   },
   "dependencies": {
     "yeoman-generator": "~0.15.0",
-    "bower": "~1.2.8"
+    "bower": "~1.2.8",
+    "insertify": "0.0.1",
+    "underscore.string": "~2.3.3"
   },
   "devDependencies": {
     "mocha": "~1.16.1"
