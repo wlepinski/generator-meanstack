@@ -1,9 +1,7 @@
 'use strict';
 (function(){
-<% if (!angularStable) { %>
-    var app = angular.module('<%= _.camelize(appname)%>App', ['ngRoute']);<% } %>
-<% if (angularStable) { %>
-    var app = angular.module('<%= _.camelize(appname)%>App', []);<% } %>
+    var app = angular.module('<%= _.camelize(appname)%>App', ['ngRoute']);
+
     app.config(function ($routeProvider) {
         $routeProvider
             .when('/', {

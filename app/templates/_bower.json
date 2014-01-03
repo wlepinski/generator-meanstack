@@ -2,19 +2,17 @@
     "name": "<%= _.slugify(appname) %>",
     "version": "0.0.0",
     "dependencies": {
-        "jquery": "~2.0.3",
-        "angular": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        "angular-resource": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        "angular-cookies": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        "angular-sanitize": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        <% if (!angularStable) { %>
-        "angular-route": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        <% } %>
+        "jquery": "<%= jqueryVersion %>",
         "json3": "~3.2.4",
-        "es5-shim": "~2.0.8"
+        "es5-shim": "~2.0.8",
+        "angular": "<%= angularVersion %>",
+        "angular-resource": "<%= angularVersion %>",
+        "angular-cookies": "<%= angularVersion %>",
+        "angular-sanitize": "<%= angularVersion %>",
+        "angular-route": "<%= angularVersion %>"
     },
     "devDependencies": {
-        "angular-mocks": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>,
-        "angular-scenario": <%= (angularStable) ? '"~1.0.8"' : '"1.2.0-rc.3"' %>
+        "angular-mocks": "<%= angularVersion %>",
+        "angular-scenario": "<%= angularVersion %>"
     }
 }
