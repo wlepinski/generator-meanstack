@@ -58,7 +58,6 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           livereload: true,
-          serverreload: true,
           server: path.resolve('app.js'),
           bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
         }
@@ -269,7 +268,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'open', 'express:dist', 'express-keepalive']);
+      return grunt.task.run(['build', 'express:dist', 'open', 'express-keepalive']);
     }
 
     grunt.task.run([

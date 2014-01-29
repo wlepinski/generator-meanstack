@@ -19,7 +19,7 @@ var MeanstackGenerator = module.exports = function MeanstackGenerator(args, opti
 
 util.inherits(MeanstackGenerator, yeoman.generators.Base);
 
-MeanstackGenerator.prototype.askFor = function askFor() {
+MeanstackGenerator.prototype.askForConfigurations = function askForConfigurations() {
     var cb = this.async();
 
     // have Yeoman greet the user.
@@ -41,7 +41,7 @@ MeanstackGenerator.prototype.askFor = function askFor() {
     }.bind(this));
 };
 
-MeanstackGenerator.prototype.app = function app() {
+MeanstackGenerator.prototype.copyFilesAndFolders = function copyFilesAndFolders() {
     this.mkdir('public');
     this.mkdir('public/images');
     this.mkdir('public/javascripts');
@@ -68,7 +68,7 @@ MeanstackGenerator.prototype.app = function app() {
     this.directory('test');
 };
 
-MeanstackGenerator.prototype.getLatestAngularVersion = function getLatestAngularVersion () {
+MeanstackGenerator.prototype.askLatestAngularVersion = function askLatestAngularVersion () {
     var cb = this.async();
     var self = this;
 
@@ -76,7 +76,7 @@ MeanstackGenerator.prototype.getLatestAngularVersion = function getLatestAngular
         .info('angular')
         .on('end', function infoFn (results) {
             var onlyStable = results.versions.filter(function onlyStable(version){
-                return version.match(/^\d\.\d\.\d$/);
+                return version.match(/^\d\.\d\.\d{1,2}$/);
             });
 
             var prompts = [
@@ -97,7 +97,7 @@ MeanstackGenerator.prototype.getLatestAngularVersion = function getLatestAngular
         });
 };
 
-MeanstackGenerator.prototype.getLatestJQueryVersion = function getLatestJQueryVersion () {
+MeanstackGenerator.prototype.askLatestJQueryVersion = function askLatestJQueryVersion () {
     var cb = this.async();
     var self = this;
 
@@ -126,7 +126,7 @@ MeanstackGenerator.prototype.getLatestJQueryVersion = function getLatestJQueryVe
         });
 };
 
-MeanstackGenerator.prototype.projectfiles = function projectfiles() {
+MeanstackGenerator.prototype.copyProjectFiles = function copyProjectFiles() {
     // Dotfiles
     this.copy('_bowerrc', '.bowerrc');
     this.copy('_editorconfig', '.editorconfig');
@@ -152,5 +152,3 @@ MeanstackGenerator.prototype.projectfiles = function projectfiles() {
         this.copy('_env', '.env');
     }
 };
-
-

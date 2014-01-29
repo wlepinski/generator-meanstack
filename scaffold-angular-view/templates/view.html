@@ -1,0 +1,14 @@
+<div>
+  <h1>Data for entity: <strong><%= name %></strong></h1>
+
+  <form ng-submit="create();">
+    <fieldset>
+      <legend>Create form</legend>
+      <%= this.entityFields %>
+    </fieldset>
+  </form>
+
+  <div ng-repeat="item in list">
+    <pre>{{item | json}}</pre>
+  </div>
+</div>

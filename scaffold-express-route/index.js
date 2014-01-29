@@ -9,10 +9,6 @@ var ScaffoldExpressRouteGenerator = module.exports = function ScaffoldExpressRou
   yeoman.generators.NamedBase.apply(this, arguments);
 
   this.className = _s.classify(this.name);
-
-  console.log(this.className);
-
-  console.log('You called the express_route subgenerator with the argument ' + this.name + '.');
 };
 
 util.inherits(ScaffoldExpressRouteGenerator, yeoman.generators.NamedBase);

@@ -3,8 +3,8 @@ var util = require('util');
 var yeoman = require('yeoman-generator');
 
 var ModelGenerator = module.exports = function ModelGenerator(args, options, config) {
+    console.log(config);
     yeoman.generators.NamedBase.apply(this, arguments);
-    console.log('You called the model subgenerator with the argument ' + this.name + '.');
 };
 
 util.inherits(ModelGenerator, yeoman.generators.NamedBase);

@@ -1,0 +1,5 @@
+Description:
+    Creates a default Meanstack application.
+
+Example:
+    yo meanstack
